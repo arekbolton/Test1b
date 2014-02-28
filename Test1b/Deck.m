@@ -57,12 +57,17 @@
     int r=0;
     r =  arc4random() % 26;
     _playingDeck = [[NSMutableArray alloc] initWithObjects:[_deck_Of_Cards objectAtIndex: (r) ], nil];
+    r = r+26;
+    _playingDeck = [[NSMutableArray alloc] initWithObjects:[_deck_Of_Cards objectAtIndex: (r) ], nil];
     
-    for (int i = 0; i < 26; i++) {
-        if (i != r) {
-            [_playingDeck addObject:[_deck_Of_Cards objectAtIndex:i]];
-        }
+    for (int i = 0; i < 16; i++) {
+        r =  arc4random() % 26;
         
+        do {
+            r =  arc4random() % 26;
+        } while (i == r);
+        [_playingDeck addObject:[_deck_Of_Cards objectAtIndex:r]];
+        [_playingDeck addObject:[_deck_Of_Cards objectAtIndex:r+26]];
     }
 }
 

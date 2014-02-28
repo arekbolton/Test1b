@@ -20,5 +20,6 @@
 
 -(void) buildDeck;
 
+-(void) assemblePlayingDeck;
 
 @end

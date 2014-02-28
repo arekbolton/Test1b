@@ -22,7 +22,7 @@ int scorePrivate = 0;
 {
     [super viewDidLoad];
     [_fullDeckofCards buildDeck];
-    [currentDeck assemblePlayingDeck];
+    [_currentDeck assemblePlayingDeck];
     
 }
 
